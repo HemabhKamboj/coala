@@ -45,7 +45,7 @@ def delete_files(log_printer, identifiers):
                 os.remove(file_path)
             else:
                 result = False
-        except (OSError, TypeError) as e:
+        except (OSError, TypeError):
             error_files.append(hash_id(identifier))
 
     if len(error_files) > 0:
